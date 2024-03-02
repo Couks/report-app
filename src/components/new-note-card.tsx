@@ -1,5 +1,5 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { X } from "lucide-react";
+import { Ban, X } from "lucide-react";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { toast } from "sonner";
 
@@ -98,10 +98,10 @@ export function NewNoteCard({ onNoteCreated }: NewNoteProps) {
   return (
     <Dialog.Root open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <Dialog.Trigger className="relative flex flex-col gap-3 overflow-hidden rounded-md bg-slate-600 p-5 text-left outline-none transition hover:bg-slate-700 hover:ring-2 hover:ring-purple-600 focus-visible:ring-2 focus-visible:ring-purple-600">
-        <span className="text-lg font-medium text-slate-100">
+        <span className="text-2xl font-medium text-slate-100 md:text-lg ">
           Adicionar nota
         </span>
-        <p className="text-md leading-6 text-slate-300">
+        <p className="md:text-md text-lg leading-6 text-slate-300">
           Grave uma nota em audio que será convertida em texto automaticamente.
         </p>
       </Dialog.Trigger>
@@ -116,17 +116,17 @@ export function NewNoteCard({ onNoteCreated }: NewNoteProps) {
               <X className="size-8" />
             </Dialog.Close>
             <form className="flex flex-1 flex-col">
-              <div className="flex flex-1 flex-col gap-3 p-5">
-                <span className="text-lg font-medium text-slate-300">
+              <div className="flex flex-1 flex-col justify-center gap-3 p-5 md:justify-start">
+                <span className="text-3xl font-medium text-slate-300 md:text-lg">
                   Adicionar nota
                 </span>
                 {shouldShowOnboarding ? (
-                  <p className="text-md leading-6 text-slate-400">
+                  <p className="leading-12 text-2xl text-slate-400 md:text-lg md:leading-6">
                     Comece{" "}
                     <button
                       type="button"
                       onClick={handleStartRecording}
-                      className="font-medium text-purple-400 hover:underline"
+                      className="font-medium text-purple-400 hover:underline "
                     >
                       gravando uma nota
                     </button>{" "}
@@ -143,7 +143,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteProps) {
                 ) : (
                   <textarea
                     autoFocus
-                    className="flex-1 resize-none bg-transparent text-md leading-6 text-slate-400 outline-none"
+                    className="text-md flex-1 resize-none bg-transparent leading-6 text-slate-400 outline-none"
                     onChange={handleContentChanged}
                     value={content}
                   ></textarea>
@@ -154,16 +154,16 @@ export function NewNoteCard({ onNoteCreated }: NewNoteProps) {
                 <button
                   type="button"
                   onClick={handleStopRecording}
-                  className="flex w-full items-center justify-center gap-2 bg-slate-900 py-4 text-center text-md font-medium text-slate-300 outline-none transition hover:text-red-500"
+                  className="text-md flex w-full items-center justify-center gap-2 bg-slate-900 py-4 text-center text-2xl font-medium text-slate-300 outline-none transition hover:text-red-500 md:text-lg"
                 >
                   <div className="size-3 animate-pulse rounded-full bg-red-500" />
-                  Gravando! (clique para interromper)
+                  Gravando <Ban />
                 </button>
               ) : (
                 <button
                   type="button"
                   onClick={handleSaveNote}
-                  className="w-full bg-purple-400 py-4 text-center text-md font-medium text-purple-950 outline-none transition hover:bg-purple-500"
+                  className="text-md w-full bg-purple-400 py-4 text-center text-2xl font-medium text-purple-950 outline-none transition hover:bg-purple-500 md:text-lg"
                 >
                   Salvar nota
                 </button>

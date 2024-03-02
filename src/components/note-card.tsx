@@ -16,7 +16,7 @@ export function NoteCard({ note, onNoteDeleted }: NoteCardProps) {
   return (
     <Dialog.Root>
       <Dialog.Trigger className="relative flex flex-col gap-3 overflow-hidden rounded-md bg-slate-800 p-5 text-left outline-none hover:ring-2 hover:ring-purple-600 focus-visible:ring-2 focus-visible:ring-purple-400">
-        <span className="text-lg font-medium text-slate-300">
+        <span className="text-2xl font-medium text-slate-300 md:text-lg">
           {formatDistanceToNow(note.date, {
             locale: ptBR,
             addSuffix: true,
@@ -35,21 +35,21 @@ export function NoteCard({ note, onNoteDeleted }: NoteCardProps) {
             <X className="size-8" />
           </Dialog.Close>
 
-          <div className="flex flex-1 flex-col gap-3 p-5">
-            <span className="text-lg font-medium text-slate-300">
+          <div className="flex flex-1 flex-col justify-center gap-3 p-5 md:justify-start">
+            <span className="md:text-lg text-3xl  font-medium text-slate-300">
               {formatDistanceToNow(note.date, {
                 locale: ptBR,
                 addSuffix: true,
               })}
             </span>
 
-            <p className="text-md leading-6 text-slate-400">{note.content}</p>
+            <p className="md:text-lg text-2xl leading-12 text-slate-400 md:leading-6">{note.content}</p>
           </div>
 
           <button
             type="button"
             onClick={() => onNoteDeleted(note.id)}
-            className="text-md group w-full bg-slate-800 py-4 text-center font-medium text-slate-300 outline-none"
+            className="text-md group w-full bg-slate-800 py-4 text-center font-medium text-slate-300 outline-none md:text-lg text-2xl "
           >
             Deseja{" "}
             <span className="text-red-400 group-hover:underline">

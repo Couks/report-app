@@ -65,7 +65,7 @@ export function App() {
         <h1 className="text-lg font-semibold leading-6 text-purple-500 align-middle">Notes</h1>
       </div>
 
-      <form className="w-full animate-pulse">
+      <form className="w-full">
         <input
           type="text"
           placeholder="Busque em suas notas..."
