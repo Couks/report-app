@@ -1,5 +1,5 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { Ban, X } from "lucide-react";
+import { Ban, CheckCircle2, X } from "lucide-react";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { toast } from "sonner";
 
@@ -154,18 +154,18 @@ export function NewNoteCard({ onNoteCreated }: NewNoteProps) {
                 <button
                   type="button"
                   onClick={handleStopRecording}
-                  className="text-md flex w-full items-center justify-center gap-2 bg-slate-900 py-4 text-center text-2xl font-medium text-slate-300 outline-none transition hover:text-red-500 md:text-lg"
+                  className="text-md flex w-full items-center justify-center gap-2 bg-slate-900 py-4 text-center text-2xl font-medium text-slate-300 outline-none transition hover:text-red-500 hover:text-xl md:text-lg"
                 >
                   <div className="size-3 animate-pulse rounded-full bg-red-500" />
-                  Gravando <Ban />
+                  Gravando <Ban className="w-4 text-red-500" />
                 </button>
               ) : (
                 <button
                   type="button"
                   onClick={handleSaveNote}
-                  className="text-md w-full bg-purple-400 py-4 text-center text-2xl font-medium text-purple-950 outline-none transition hover:bg-purple-500 md:text-lg"
+                  className="text-md flex w-full items-center justify-center gap-2 bg-slate-900 py-4 text-center text-2xl font-medium text-zinc-100 outline-none transition hover:text-green-500 hover:text-xl md:text-lg"
                 >
-                  Salvar nota
+                  Salvar nota <CheckCircle2 className="w-4" />
                 </button>
               )}
             </form>
