@@ -59,13 +59,10 @@ export function App() {
       : notes;
 
   return (
-    <div className="mx-auto my-12 max-w-6xl space-y-6 px-5">
-      <div className="flex gap-2 items-center">
-        <img src={logo} alt="NLW Expert" className="w-8 animate-pulse" />
-        <h1 className="text-lg font-semibold leading-6 text-purple-500 align-middle">Notes</h1>
-      </div>
+    <div className="mx-auto my-12 max-w-6xl space-y-6 px-5">    
 
-      <form className="w-full">
+      <form className="w-full flex gap-2">
+      <img src={logo} alt="NLW Expert" className="w-8 animate-pulse" />
         <input
           type="text"
           placeholder="Busque em suas notas..."
@@ -74,7 +71,7 @@ export function App() {
         />
       </form>
 
-      <div className="h-px bg-purple-700" />
+      <div className="h-px bg-violet-700" />
 
       <div className="grid auto-rows-[250px] grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         <NewNoteCard onNoteCreated={onNoteCreated} />
