@@ -59,29 +59,34 @@ export function App() {
       : notes;
 
   return (
-    <div className="mx-auto my-12 max-w-6xl space-y-6 px-5">    
+    <>
+      <div className="mx-auto my-12 max-w-6xl space-y-6 px-5">
+        <form className="flex w-full gap-3">
+          <img src={logo} alt="lenin" className="size-16 rounded-full" />
+          <input
+            type="text"
+            placeholder="Busque em suas relatorias..."
+            className="w-full bg-transparent text-xl font-semibold tracking-tight outline-none placeholder:text-zinc-500 sm:text-3xl"
+            onChange={handleSearch}
+          />
+        </form>
 
-      <form className="w-full flex gap-2">
-      <img src={logo} alt="NLW Expert" className="w-8 animate-pulse" />
-        <input
-          type="text"
-          placeholder="Busque em suas notas..."
-          className="placeholder:text-state-500 w-full bg-transparent text-2xl md:text-3xl font-semibold tracking-tight outline-none"
-          onChange={handleSearch}
-        />
-      </form>
+        <div className="h-px bg-red-700" />
 
-      <div className="h-px bg-violet-700" />
+        <div className="grid auto-rows-[250px] grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <NewNoteCard onNoteCreated={onNoteCreated} />
 
-      <div className="grid auto-rows-[250px] grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <NewNoteCard onNoteCreated={onNoteCreated} />
-
-        {filteredNotes.map((note) => {
-          return (
-            <NoteCard onNoteDeleted={onNoteDeleted} key={note.id} note={note} />
-          );
-        })}
+          {filteredNotes.map((note) => {
+            return (
+              <NoteCard
+                onNoteDeleted={onNoteDeleted}
+                key={note.id}
+                note={note}
+              />
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
