@@ -21,8 +21,8 @@ export function NoteCard({ note, onNoteDeleted }: NoteCardProps) {
 
   return (
     <Dialog.Root>
-      <Dialog.Trigger className="relative flex flex-col gap-3 overflow-hidden rounded-md bg-zinc-100 p-5 text-left outline-none hover:ring-2 hover:ring-red-600 focus-visible:ring-2 focus-visible:ring-red-400 dark:bg-zinc-800">
-        <span className="flex gap-2 text-xl font-normal text-zinc-950 md:text-lg dark:text-zinc-300">
+      <Dialog.Trigger className="relative flex flex-col gap-3 overflow-hidden rounded-3xl bg-zinc-100 p-5 text-left outline-none hover:ring-2 hover:ring-red-600 focus-visible:ring-2 focus-visible:ring-red-400 dark:bg-zinc-800">
+        <span className="text-md flex gap-2 font-normal text-zinc-950 md:text-xl dark:text-zinc-300">
           <File />
           {format(note.date, "PPp ", {
             locale: ptBR,
@@ -38,13 +38,13 @@ export function NoteCard({ note, onNoteDeleted }: NoteCardProps) {
 
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black/80" />
-        <Dialog.Content className="fixed inset-0 flex w-full flex-col overflow-hidden bg-zinc-300 outline-none md:inset-auto md:left-1/2 md:top-1/2 md:h-[60vh] md:max-w-[640px] md:-translate-x-1/2 md:-translate-y-1/2 md:rounded-md dark:bg-zinc-700">
-          <Dialog.Close className="absolute right-0 top-0 rounded-es bg-zinc-600 p-1.5 text-zinc-900 hover:text-zinc-100 dark:bg-zinc-800 dark:text-zinc-400">
+        <Dialog.Content className="fixed inset-0 flex w-full flex-col overflow-hidden bg-zinc-300 outline-none md:inset-auto md:left-1/2 md:top-1/2 md:h-[60vh] md:max-w-[640px] md:-translate-x-1/2 md:-translate-y-1/2 md:rounded-3xl dark:bg-zinc-700">
+          <Dialog.Close className="absolute right-0 top-0 rounded-es-xl bg-zinc-600 p-1.5 text-zinc-900 hover:text-zinc-100 dark:bg-zinc-800 dark:text-zinc-400">
             <X className="size-8" />
           </Dialog.Close>
 
           <div className="flex flex-1 flex-col justify-center gap-3 p-5 md:justify-start">
-            <span className="flex gap-2 text-xl font-normal text-zinc-900 md:text-lg dark:text-zinc-100">
+            <span className="text-md flex gap-2 font-normal text-zinc-900 md:text-xl dark:text-zinc-100">
               <File />
               {format(note.date, "PPPPp ", {
                 locale: ptBR,
