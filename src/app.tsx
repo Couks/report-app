@@ -66,7 +66,7 @@ export function App() {
           <input
             type="text"
             placeholder="Busque em suas relatorias..."
-            className="w-full bg-transparent text-xl font-semibold tracking-tight outline-none placeholder:text-zinc-500 sm:text-3xl"
+            className="text-md w-full bg-transparent font-semibold tracking-tight outline-none placeholder:text-zinc-500 sm:text-3xl"
             onChange={handleSearch}
           />
         </form>
