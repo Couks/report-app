@@ -21,7 +21,6 @@ export function NewNoteCard({ onNoteCreated }: NewNoteProps) {
 
   function handleContentChanged(event: ChangeEvent<HTMLTextAreaElement>) {
     setContent(event.target.value);
-
     if (event.target.value === "") {
       setShouldShowOnboarding(true);
     }
@@ -29,19 +28,13 @@ export function NewNoteCard({ onNoteCreated }: NewNoteProps) {
 
   function handleSaveNote(event: FormEvent) {
     event.preventDefault();
-
     if (content === "") {
       return;
     }
-
     onNoteCreated(content);
-
     setContent("");
-
     setShouldShowOnboarding(true);
-
     toast.success("Relatoria criada com sucesso!");
-
     setIsDialogOpen(false); // Close dialog after saving
   }
 
@@ -109,7 +102,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteProps) {
 
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black/80">
-          <Dialog.Content className="fixed inset-0 flex w-full flex-col overflow-hidden bg-zinc-300 outline-none md:inset-auto md:left-1/2 md:top-1/2 md:h-[60vh] md:max-w-[640px] md:-translate-x-1/2 md:-translate-y-1/2 md:rounded-3xl dark:bg-zinc-700">
+          <Dialog.Content className="fixed inset-0 flex w-full flex-col overflow-hidden bg-zinc-300 outline-none md:inset-auto md:left-1/2 md:top-1/2 md:h-[80vh] md:max-w-[120vh] md:-translate-x-1/2 md:-translate-y-1/2 md:rounded-3xl dark:bg-zinc-700">
             <Dialog.Close
               className="absolute right-0 top-0 rounded-es-xl bg-zinc-600 p-1.5 text-zinc-900 hover:text-zinc-100 dark:bg-zinc-800 dark:text-zinc-400"
               onClick={handleCloseDialog}

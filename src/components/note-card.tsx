@@ -56,19 +56,29 @@ export function NoteCard({ note, onNoteDeleted }: NoteCardProps) {
             </textarea>
           </div>
 
-          <button
-            type="button"
-            onClick={handleDelete}
-            className="text-md group w-full bg-zinc-600 py-4 text-center text-2xl font-medium text-zinc-100 outline-none md:text-lg dark:bg-zinc-800 dark:text-zinc-300 "
-          >
-            Deseja{" "}
-            <span className="text-red-300 group-hover:text-red-400 group-hover:underline dark:text-red-400">
-              apagar essa relatoria
-            </span>{" "}
-            ?
-          </button>
+          <DeleteButton onDelete={handleDelete} />
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
+  );
+}
+
+interface DeleteButtonProps {
+  onDelete: () => void;
+}
+
+function DeleteButton({ onDelete }: DeleteButtonProps) {
+  return (
+    <button
+      type="button"
+      onClick={onDelete}
+      className="text-md group w-full bg-zinc-600 py-4 text-center text-2xl font-medium text-zinc-100 outline-none md:text-lg dark:bg-zinc-800 dark:text-zinc-300 "
+    >
+      Deseja{" "}
+      <span className="text-red-300 group-hover:text-red-400 group-hover:underline dark:text-red-400">
+        apagar essa relatoria
+      </span>{" "}
+      ?
+    </button>
   );
 }
